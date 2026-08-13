@@ -36,6 +36,8 @@ function cipher(str, num) {
 
 function calcIndex(char, num) {
   const cipherIndex = alphabet.findIndex(letter => letter === char.toLowerCase()) + num
+
+  // Handles shift index that exceeds alphabet size(returns to beginning of alphabet)
   if (cipherIndex > 25) {
     return cipherIndex - 26
   } else {
